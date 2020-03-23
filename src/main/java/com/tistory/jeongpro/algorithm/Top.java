@@ -8,11 +8,18 @@ import java.util.Stack;
  */
 public class Top {
     public int[] solution(int[] heights) {
-        int[] answer = {};
-        Stack<Integer> stack = new Stack<Integer>();
-        for(int i=0;i<heights.length;i++){
-            answer[i]
+        int[] answer = new int[heights.length];
+
+        for(int i=heights.length-1; i>0; i--) {
+            for(int j=i-1; j>=0; j--) {
+                if(heights[i] < heights[j]) {
+                    answer[i] = j+1;
+                    break;
+                }
+            }
         }
+        answer[0] = 0;
+
         return answer;
     }
 }
