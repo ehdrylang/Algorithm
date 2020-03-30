@@ -1,23 +1,25 @@
 package com.tistory.jeongpro.sort;
 
 /**
- * 이미 정렬된 것 사이에 넣자
+ * 바로 옆에 것과 비교를 해보자
  */
-public class InsertSort {
+public class BubbleSort {
     public static int[] numbers = {4,3,2,7,6,5,1,10,9,8};
 
-    public static int[] insertSort(){
-        for(int i=0;i<numbers.length-1;i++){
-            int j=i;
-            while(j>=0 && numbers[j] > numbers[j+1]){
-                swap(numbers, j, j+1);
-                j--;
+    public static int[] bubbleSort(){
+
+        for(int i=numbers.length-1;i>0;i--){
+            for(int j=0;j<i;j++){
+                if(numbers[j] > numbers[j+1]){
+                    swap(numbers, j , j+1);
+                }
             }
         }
         for(int v : numbers){
             System.out.println(v);
         }
         return numbers;
+
     }
 
     public static void swap(int[] array, int idx1, int idx2){
