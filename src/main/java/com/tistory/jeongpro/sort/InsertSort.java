@@ -2,6 +2,8 @@ package com.tistory.jeongpro.sort;
 
 /**
  * 이미 정렬된 것 사이에 넣자
+ *
+ * numbers.length-1 로하는 것을 못했다
  */
 public class InsertSort {
     public static int[] numbers = {4,3,2,7,6,5,1,10,9,8};
