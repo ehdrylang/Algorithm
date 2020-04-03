@@ -7,11 +7,6 @@ public class MergeSort {
     public static int[] numbers = {4,3,2,7,6,5,1,10,9,8};
     public static int[] result = new int[numbers.length];
 
-    public static void swap(int[] array, int idx1, int idx2){
-        int temp = array[idx1];
-        array[idx1] = array[idx2];
-        array[idx2] = temp;
-    }
     public static void mergeSort(){
         mergeSort(numbers, 0, numbers.length-1);
         for (int v : numbers) {
@@ -43,17 +38,17 @@ public class MergeSort {
         }
         //
         if(i > middle){
-            for(int t = j; t < end; t++){
+            for(int t = j; t <= end; t++){
                 result[k] = array[t];
                 k++;
             }
         }else{
-            for(int t = i;t < middle; t++){
+            for(int t = i;t <= middle; t++){
                 result[k] = array[t];
                 k++;
             }
         }
-        for(int t=start;t<end;t++){
+        for(int t=start;t<=end;t++){
             numbers[t] = result[t];
         }
     }
