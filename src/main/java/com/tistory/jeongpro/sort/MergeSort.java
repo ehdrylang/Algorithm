@@ -12,16 +12,18 @@ public class MergeSort {
         array[idx1] = array[idx2];
         array[idx2] = temp;
     }
-
+    public static void mergeSort(){
+        mergeSort(numbers, 0, numbers.length-1);
+        for (int v : numbers) {
+            System.out.println(v);
+        }
+    }
     public static void mergeSort(int[] array, int start, int end){
         if(start < end) {
             int middle = (start + end) / 2;
             mergeSort(array, start, middle);
             mergeSort(array, middle+1, end);
             merge(array, start, middle, end);
-        }
-        for (int v : numbers) {
-            System.out.println(v);
         }
     }
     public static void merge(int[] array, int start, int middle, int end){
@@ -35,7 +37,7 @@ public class MergeSort {
                 i++;
             }else{
                 result[k] = array[j];
-                j++
+                j++;
             }
             k++;
         }
