@@ -33,13 +33,14 @@ public class QuickSort {
             while(i < j && array[i] < pivot){
                 i++;
             }
-            while(i < j && array[j] > pivot){
+            while(i < j && array[j] >= pivot){
                 j--;
             }
             if(i < j){
                 swap(array, i, j);
             }
         }
+        swap(array, left, j);
         return i;
     }
 }
