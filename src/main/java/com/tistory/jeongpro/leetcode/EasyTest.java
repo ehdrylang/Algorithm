@@ -1,6 +1,10 @@
 package com.tistory.jeongpro.leetcode;
 
+import sun.awt.image.ImageWatched;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class EasyTest {
@@ -60,5 +64,51 @@ public class EasyTest {
             result[i] = count;
         }
         return result;
+    }
+    public int findNumbers(int[] nums) {
+        return (int) Arrays.stream(nums)
+                .filter(x -> Integer.toString(x).length() % 2 == 0)
+                .count();
+    }
+    public int balancedStringSplit(String s) {
+        int count = 0;
+        int check = 0;
+        for(char c : s.toCharArray()){
+            if(c == 'R'){
+                check++;
+            }else{
+                check--;
+            }
+            if(check == 0){
+                count++;
+            }
+        }
+        return count;
+    }
+    public int[] createTargetArray(int[] nums, int[] index) {
+        List<Integer> list = new LinkedList<>();
+        for(int i=0;i<nums.length;i++){
+            list.add(index[i], nums[i]);
+        }
+        int[] result = new int[list.size()];
+        for(int i=0;i<list.size();i++){
+            result[i] = list.get(i);
+        }
+        return result;
+    }
+
+     public class TreeNode {
+          int val;
+          TreeNode left;
+          TreeNode right;
+          TreeNode(int x) { val = x; }
+     }
+     class Solution {
+        public int rangeSumBST(TreeNode root, int L, int R) {
+            int result = 0;
+            if(root.val >= L){
+
+            }
+        }
     }
 }
