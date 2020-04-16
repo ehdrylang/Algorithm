@@ -39,4 +39,26 @@ public class EasyTest {
         }
         return mul - sum;
     }
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+        int[] cache = new int[101];
+        for(int i=0;i<cache.length;i++){
+            cache[i] = -1;
+        }
+        int[] result = new int[nums.length];
+        for(int i=0;i<nums.length;i++){
+            int count = 0;
+            if(cache[nums[i]] != -1){
+                result[i] = cache[nums[i]];
+                continue;
+            }
+            for(int j=0;j<nums.length;j++){
+                if(nums[i] > nums[j]){
+                    count++;
+                }
+            }
+            cache[nums[i]] = count;
+            result[i] = count;
+        }
+        return result;
+    }
 }
