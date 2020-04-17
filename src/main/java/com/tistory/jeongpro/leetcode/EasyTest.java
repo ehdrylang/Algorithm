@@ -2,10 +2,7 @@ package com.tistory.jeongpro.leetcode;
 
 import sun.awt.image.ImageWatched;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class EasyTest {
     public int numJewelsInStones(String J, String S) {
@@ -121,6 +118,11 @@ public class EasyTest {
         ListNode(int x) { val = x; }
     }
     public int getDecimalValue(ListNode head) {
-        
+        int sum = 0;
+        while(head != null) {
+            sum = sum * 2 + head.val;
+            head = head.next;
+        }
+        return sum;
     }
 }
