@@ -132,4 +132,21 @@ public class EasyTest {
         }
         return steps;
     }
+    public int countNegatives(int[][] grid) {
+        int result = 0;
+        for(int[] row : grid){
+            Arrays.sort(row);
+            for(int v : row){
+                if(v >= 0){
+                    break;
+                }else{
+                    result++;
+                }
+            }
+        }
+        return result;
+    }
+    public String freqAlphabets(String s) {
+        Map<String, Character> map = new HashMap<>();
+    }
 }
