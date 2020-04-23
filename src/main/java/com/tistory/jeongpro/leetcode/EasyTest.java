@@ -148,5 +148,36 @@ public class EasyTest {
     }
     public String freqAlphabets(String s) {
         Map<String, Character> map = new HashMap<>();
+        map.put("1", 'a');
+        return null;
+    }
+    public int[][] flipAndInvertImage(int[][] A) {
+        for(int i=0;i<A.length;i++){
+            for(int j=0;j<A[i].length;j++){
+                if(A[i][j] == 0){
+                    A[i][j] = 1;
+                }else{
+                    A[i][j] = 0;
+                }
+            }
+        }
+        return null;
+    }
+    public int[] sortArrayByParity(int[] A) {
+        List<Integer> odd = new ArrayList<>();
+        List<Integer> even = new ArrayList<>();
+        for(int a : A){
+            if(a%2 == 0){
+                even.add(a);
+            }else{
+                odd.add(a);
+            }
+        }
+        even.addAll(odd);
+        int[] result = new int[even.size()];
+        for(int i=0;i<even.size();i++){
+            result[i] = even.get(i);
+        }
+        return result;
     }
 }
