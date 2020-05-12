@@ -180,4 +180,26 @@ public class EasyTest {
         }
         return result;
     }
+    /**
+     * DI String Match
+     */
+    public int[] diStringMatch(String S) {
+        int[] result = new int[S.length()+1];
+        int start = 0;
+        int end = S.length();
+        for(int i=0;i<S.length();i++){
+            if(S.charAt(i) == 'I'){
+                result[i] = start;
+                start++;
+            }else{
+                result[i] = end;
+                end--;
+            }
+        }
+        result[result.length-1] = end;
+        return result;
+    }
+    public List<Integer> luckyNumbers (int[][] matrix) {
+
+    }
 }
