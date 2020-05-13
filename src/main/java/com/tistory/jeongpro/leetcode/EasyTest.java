@@ -272,14 +272,79 @@ public class EasyTest {
             return numbers;
         }
     }
-    public int hello(int[] numbers, int K){
+    public int hello(int[] numbers, int K) {
         int count = 0;
-        for(int i=0;i<numbers.length-1; i++){
-            int M = Math.abs(numbers[i] - numbers[i+1]);
-            if(M > K){
+        for (int i = 0; i < numbers.length - 1; i++) {
+            int M = Math.abs(numbers[i] - numbers[i + 1]);
+            if (M > K) {
                 count++;
             }
         }
         return count;
+    }
+    public int countNegatives(int[][] grid) {
+        int result = 0;
+        for(int[] row : grid){
+            Arrays.sort(row);
+            for(int v : row){
+                if(v >= 0){
+                    break;
+                }else{
+                    result++;
+                }
+            }
+        }
+        return result;
+    }
+    public int[][] flipAndInvertImage(int[][] A) {
+        for(int i=0;i<A.length;i++){
+            for(int j=0;j<A[i].length;j++){
+                if(A[i][j] == 0){
+                    A[i][j] = 1;
+                }else{
+                    A[i][j] = 0;
+                }
+            }
+        }
+        return null;
+    }
+    public int[] sortArrayByParity(int[] A) {
+        List<Integer> odd = new ArrayList<>();
+        List<Integer> even = new ArrayList<>();
+        for(int a : A){
+            if(a%2 == 0){
+                even.add(a);
+            }else{
+                odd.add(a);
+            }
+        }
+        even.addAll(odd);
+        int[] result = new int[even.size()];
+        for(int i=0;i<even.size();i++){
+            result[i] = even.get(i);
+        }
+        return result;
+    }
+    /**
+     * DI String Match
+     */
+    public int[] diStringMatch(String S) {
+        int[] result = new int[S.length()+1];
+        int start = 0;
+        int end = S.length();
+        for(int i=0;i<S.length();i++){
+            if(S.charAt(i) == 'I'){
+                result[i] = start;
+                start++;
+            }else{
+                result[i] = end;
+                end--;
+            }
+        }
+        result[result.length-1] = end;
+        return result;
+    }
+    public List<Integer> luckyNumbers (int[][] matrix) {
+            return null;
     }
 }
