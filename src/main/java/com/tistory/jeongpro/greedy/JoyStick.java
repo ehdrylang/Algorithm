@@ -39,7 +39,8 @@ import java.beans.ConstructorProperties;
 public class JoyStick {
     @PostConstruct
     private void test(){
-
+        System.out.println("expect : 56, test : " + solution("JEROEN"));
+        System.out.println("expect : 23, test : " + solution("JAN"));
     }
     public int solution(String name) {
         int answer = 0;
