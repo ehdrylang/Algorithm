@@ -164,20 +164,45 @@ public class EasyTest {
         return null;
     }
     public int[] sortArrayByParity(int[] A) {
-        List<Integer> odd = new ArrayList<>();
-        List<Integer> even = new ArrayList<>();
+        int [] result = new int[A.length];
+        int start = 0;
+        int end = result.length-1;
         for(int a : A){
             if(a%2 == 0){
-                even.add(a);
+                result[start++] = a;
             }else{
-                odd.add(a);
+                result[end--] = a;
             }
         }
-        even.addAll(odd);
-        int[] result = new int[even.size()];
-        for(int i=0;i<even.size();i++){
-            result[i] = even.get(i);
-        }
         return result;
+    }
+    public int repeatedNTimes(int[] A) {
+        Set<Integer> set = new HashSet<>();
+        for(int a : A){
+            if(set.contains(a)){
+                return a;
+            }else{
+                set.add(a);
+            }
+        }
+        return 0;
+    }
+    class Solution {
+        public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
+            if(t1.left == null){
+                t1.left = t2.left;
+            }
+            if(t1 != null && t2 != null){
+                t1.val += t2.val;
+            }
+            Set<Integer> set = new HashSet<>();
+            List<Integer> list = new ArrayList<>();
+            int[] a = new int[5];
+            list.removeIf((x)->x == a[1]);
+            StringBuilder sb = new StringBuilder();
+            String[] str = {};
+            String s = "!11";
+            return null;
+        }
     }
 }
