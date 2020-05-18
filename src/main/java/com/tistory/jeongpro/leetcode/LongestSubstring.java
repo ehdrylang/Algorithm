@@ -1,5 +1,8 @@
 package com.tistory.jeongpro.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Given a string, find the length of the longest substring without repeating characters.
  *
@@ -22,21 +25,27 @@ package com.tistory.jeongpro.leetcode;
  */
 public class LongestSubstring {
     public int lengthOfLongestSubstring(String s) {
-        int answer = 0;
-        StringBuilder sb = new StringBuilder();
-        for(String str : s.split("")){
-            if (sb.indexOf(str) != -1) {
-                int length = sb.length();
-                if (answer < length) {
-                    answer = length;
-                }
-                sb.delete(0,sb.indexOf(str)+1);
+        int max_len=0;
+        int start=0, end=0;
+        int len=0;
+        Map<Character,Integer> hmap=new HashMap<>();
+        while(start<=end && end<s.length())
+        {
+            if(!hmap.containsKey(s.charAt(end)))
+            {
+                hmap.put(s.charAt(end),1);
+                end++;
+                len++;
             }
-            sb.append(str);
+            else
+            {
+                if(len>max_len) max_len=len;
+                len--;
+                hmap.remove(s.charAt(start));
+                start++;
+            }
         }
-        if(answer < sb.length()){
-            return sb.length();
-        }
-        return answer;
+        if(len>max_len) max_len=len;
+        return max_len;
     }
 }
