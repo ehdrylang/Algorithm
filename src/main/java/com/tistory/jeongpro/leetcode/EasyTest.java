@@ -3,6 +3,7 @@ package com.tistory.jeongpro.leetcode;
 import sun.awt.image.ImageWatched;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class EasyTest {
     public int numJewelsInStones(String J, String S) {
@@ -199,7 +200,79 @@ public class EasyTest {
         result[result.length-1] = end;
         return result;
     }
-    public List<Integer> luckyNumbers (int[][] matrix) {
 
+    /**
+     * lucky numbers in a matrix
+     * @param matrix
+     * @return
+     */
+    public List<Integer> luckyNumbers (int[][] matrix) {
+        List<Integer> res = new ArrayList<>();
+        for(int i=0;i<matrix.length;i++){
+            int min = Integer.MAX_VALUE;
+            int col = 0;
+            for(int j=0;j<matrix[i].length;j++){
+                if(min > matrix[i][j]){
+                    min = matrix[i][j];
+                    col = j;
+                }
+            }
+            int max = min;
+            for(int j=0;j<matrix.length;j++){
+                if(max < matrix[j][col]){
+                    max = matrix[j][col];
+                }
+            }
+            if(max == min){
+                res.add(min);
+            }
+        }
+        return res;
+    }
+    public int hammingDistance(int x, int y) {
+
+        int xor = x^y;
+        int ctr = 0;
+
+        while(xor!=0) {
+            ctr+=xor&1;
+            xor=xor>>1;
+        }
+        return ctr;
+    }
+    public List<Integer> minSubsequence(int[] nums) {
+        List<Integer> list = new ArrayList<Integer>(Arrays.stream(nums).boxed().collect(Collectors.toList()));
+        int sum = 0;
+        for(int i : nums){
+            sum += i;
+        }
+        list.sort((a,b)->b-a);
+
+        return null;
+    }
+
+    class Node {
+        public int val;
+        public List<Node> children;
+
+        public Node() {}
+
+        public Node(int _val) {
+            val = _val;
+        }
+
+        public Node(int _val, List<Node> _children) {
+            val = _val;
+            children = _children;
+        }
+    };
+
+    /**
+     * n-ary tree preorder Traversal
+     * @param root
+     * @return
+     */
+    public List<Integer> preorder(Node root) {
+        root.
     }
 }
