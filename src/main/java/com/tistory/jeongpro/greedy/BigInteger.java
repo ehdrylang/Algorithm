@@ -27,15 +27,32 @@ import java.util.Arrays;
 public class BigInteger {
     @PostConstruct
     private void test(){
-
+        String str = "1231234";
+        System.out.println("what : "  + solution(str, 3));
     }
     public String solution(String number, int k) {
+        int size = number.length() - k; //최종 결과의 자릿수
         char[] numbers = number.toCharArray();
-        Arrays.sort(numbers);
         StringBuilder sb = new StringBuilder();
-        for(int i=numbers.length-1;i>k-1;i--){
-            sb.append(numbers[i]);
+        int start = 0;
+        int end = k;
+        for(int i=0;i<size;i++){
+            int maxIdx = maxIndex(start, end, numbers);
+            sb.append(numbers[maxIdx]);
+            start = ++maxIdx;
+            end++;
         }
         return sb.toString();
+    }
+    private int maxIndex(int startIdx, int endIdx, char[] array){
+        int max = -1;
+        int idx = -1;
+        for(int i=startIdx;i<=endIdx;i++){
+            if(array[i] > max){
+                max = array[i];
+                idx = i;
+            }
+        }
+        return idx;
     }
 }
