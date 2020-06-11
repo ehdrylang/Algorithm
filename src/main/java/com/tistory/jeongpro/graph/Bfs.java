@@ -20,7 +20,7 @@ public class Bfs {
     }
     public static class Graph {
         private int V; // 노드의 개수
-        private LinkedList<Integer> adj[]; // 인접 리스트
+        private LinkedList<Integer>[] adj; // 인접 리스트
 
         /** 생성자 */
         Graph(int v) {

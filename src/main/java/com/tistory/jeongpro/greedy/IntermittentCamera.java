@@ -1,6 +1,7 @@
 package com.tistory.jeongpro.greedy;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * 단속카메라

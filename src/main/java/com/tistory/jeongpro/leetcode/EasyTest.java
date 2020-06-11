@@ -392,7 +392,7 @@ public class EasyTest {
             val = _val;
             children = _children;
         }
-    };
+    }
     class Solution {
         public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
             if (t1.left == null) {
