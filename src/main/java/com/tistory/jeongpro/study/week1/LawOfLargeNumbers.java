@@ -17,16 +17,18 @@ public class LawOfLargeNumbers {
         //
         int count = 0;
         int result = 0;
-        for (int i = 0; i < m; i++) {
-            if (count == k) {
-                result += max2;
-                count = 0;
-            } else {
-                result += max1;
-                count++;
-            }
-        }
-        return result;
+//        for (int i = 0; i < m; i++) {
+//            if (count == k) {
+//                result += max2;
+//                count = 0;
+//            } else {
+//                result += max1;
+//                count++;
+//            }
+//        }
+        int cycle = m / (k+1);
+        int remain = m % (k+1);
+        return cycle * (k*max1 + max2) + remain * max1;
     }
 
     private static int bubbleOneCycle(int[] array, int size) {
