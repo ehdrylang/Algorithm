@@ -3,8 +3,6 @@ package com.tistory.jeongpro.study.week1;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class CardGameTest {
     @Test
     public void 공식_테스트() {
