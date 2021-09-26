@@ -26,9 +26,9 @@ public class LawOfLargeNumbers {
 //                count++;
 //            }
 //        }
-        int cycle = m / (k+1);
-        int remain = m % (k+1);
-        return cycle * (k*max1 + max2) + remain * max1;
+        int cycle = m / (k + 1);
+        int remain = m % (k + 1);
+        return cycle * (k * max1 + max2) + remain * max1;
     }
 
     private static int bubbleOneCycle(int[] array, int size) {
