@@ -16,16 +16,16 @@ public class Ice {
 
         for (int i = 0; i < iceBlocks.length; i++) {
             for (int j = 0; j < iceBlocks[i].length; j++) {
-                if (iceBlocks[i][j] == 0) {
-                    if (visited[i][j] == 0) {
-                        result++;
-                        visited[i][j] = result;
+                if (iceBlocks[i][j] == 0) { // 빈칸?
+                    if (visited[i][j] == 0) { //이미 채운적이 없으면
+                        result++; //새로 채우니까 +1
+                        visited[i][j] = result; // 채운 곳이라고 체크
                     }
-                    int k = i + 1;
+                    int k = i + 1; // 오른쪽 다음칸
                     if (k < n && iceBlocks[k][j] == 0) {
                         visited[k][j] = result;
                     }
-                    int l = j + 1;
+                    int l = j + 1; // 아래쪽 다음칸
                     if (l < m && iceBlocks[i][l] == 0) {
                         visited[i][l] = result;
                     }
