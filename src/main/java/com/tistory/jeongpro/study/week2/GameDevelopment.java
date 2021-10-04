@@ -27,14 +27,18 @@ public class GameDevelopment {
 
         int failCount = 0;
         while (true) {
-            currD = changeDirection(currD); // 90도 반시계방향 회전
-            Map.Entry<Integer, Integer> entry = actions.get(currD);
+            currD = changeDirection(currD); // 90도 반시계 방향 회전
+
+            Map.Entry<Integer, Integer> entry = actions.get(currD); // 방향에 따른 진행 방법
+
             int nextX = currX + entry.getKey();
-            int nextY = currY + entry.getKey();
-            String hash = new StringBuilder().append(nextX).append(nextY).toString();
+            int nextY = currY + entry.getValue();
+
+            String hash = new StringBuilder().append(nextX).append(nextY).toString();//방문 여부 해시 값
+
             if (!isValid(nextX, nextY, area) || isItSea(nextX, nextY, area) || visited.contains(hash)) {
                 failCount++;
-                if (failCount == 5) {
+                if (failCount == 4) {
                     int backDirection = changeBackDirection(currD);
                     Map.Entry<Integer, Integer> entry2 = actions.get(backDirection);
                     int backX = currX + entry2.getKey();
