@@ -1,7 +1,6 @@
 package com.tistory.jeongpro.leetcode;
 
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import sun.awt.image.ImageWatched;
 
 import java.util.*;
 import java.util.stream.Collectors;

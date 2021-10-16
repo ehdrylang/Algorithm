@@ -1,11 +1,9 @@
 package com.tistory.jeongpro.study.week4;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class AntWarriorTest {
     @Test
